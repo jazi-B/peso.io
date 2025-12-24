@@ -1,0 +1,344 @@
+2025-12-24T19:25:37.376Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+The table `main.Order` does not exist in the current database.
+PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+The table `main.Order` does not exist in the current database.
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6877)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:36:19.974Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:36:29.027Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:36:45.974Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:37:11.242Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:37:20.099Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:38:07.392Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
+2025-12-24T19:39:40.568Z - 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst()` invocation in
+C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:172
+
+  168 }
+  169 // Prevent duplicate submissions (same contact + same service within last 5 minutes)
+  170 const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+→ 171 const existingOrder = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].order.findFirst(
+Error querying the database: Error code 14: Unable to open the database file
+    at In.handleRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:7177)
+    at In.handleAndLogRequestError (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:6211)
+    at In.request (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:122:5919)
+    at async l (C:\Users\m_jaz\Desktop\peso\node_modules\@prisma\client\runtime\library.js:127:11167)
+    at async POST (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__9a9c1b90._.js:171:31)
+    at async AppRouteRouteModule.do (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:37866)
+    at async AppRouteRouteModule.handle (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:5:45156)
+    at async responseGenerator (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:17995:38)
+    at async AppRouteRouteModule.handleResponse (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js:1:187713)
+    at async handleResponse (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18058:32)
+    at async Module.handler (C:\Users\m_jaz\Desktop\peso\.next\dev\server\chunks\[root-of-the-server]__daa4b1a9._.js:18111:13)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1422:9)
+    at async DevServer.renderPageComponent (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1474:24)
+    at async DevServer.renderToResponseImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1524:32)
+    at async DevServer.pipeImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:1018:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\next-server.js:395:17)
+    at async DevServer.handleRequestImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\base-server.js:909:17)
+    at async C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:387:20
+    at async Span.traceAsyncFn (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\dev\next-dev-server.js:383:24)
+    at async invokeRender (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:248:21)
+    at async handleRequest (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:447:24)
+    at async requestHandlerImpl (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\router-server.js:496:13)
+    at async Server.requestListener (C:\Users\m_jaz\Desktop\peso\node_modules\next\dist\server\lib\start-server.js:226:13)
+
