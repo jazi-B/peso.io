@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/peso?schema=public
+      - JWT_SECRET=change_this_to_a_long_random_string
+      - ADMIN_PASSWORD=admin123
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=peso
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

@@ -3,12 +3,26 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Peso.io - Professional Pest Control",
-  description: "Reliable Pest Control & Fumigation Services",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: ["Pest Control", "Fumigation", "Termite Control", "Disinfectant", "Rodent Control", "Pest Removal"],
+  authors: [{ name: "Peso.io" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://peso.io",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
 };
 
 export default function RootLayout({

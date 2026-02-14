@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   --primary: #059669;
@@ -33,6 +33,13 @@ body {
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -40,18 +47,138 @@ a {
   text-decoration: none;
 }
 
-/* Utilities */
+/* Layout Utilities */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+.section-padding {
+  padding: 6rem 0;
+}
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .grid-auto-fit {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Typography Utilities */
+.text-hero {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .text-hero {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .flex-between {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-hero {
+    font-size: 2rem;
+  }
+}
+
+.text-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.text-body {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Component Utilities */
+.nav-link {
+  color: var(--text-body);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
 .glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card {
@@ -60,6 +187,7 @@ a {
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border);
   transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
 }
 
 .glass-card:hover {
@@ -100,10 +228,24 @@ a {
   opacity: 0.9;
 }
 
+.btn-white {
+  background-color: white;
+  color: var(--primary);
+}
+
+.btn-white:hover {
+  background-color: #f9fafb;
+}
+
 .btn-outline {
   background: transparent;
   border: 2px solid var(--primary);
   color: var(--primary);
+}
+
+.btn-outline.white {
+  border-color: white;
+  color: white;
 }
 
 .btn-outline:hover {
@@ -111,6 +253,13 @@ a {
   color: white;
 }
 
+.btn-outline.white:hover {
+  background: white;
+  color: var(--primary);
+}
+
+
+/* Form Utilities */
 .input-group {
   margin-bottom: 1rem;
 }
@@ -144,6 +293,25 @@ a {
   margin-top: 0.25rem;
 }
 
+/* Sections */
+.hero-section {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+  text-align: center;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -159,22 +327,4 @@ a {
 
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Specific Page Styles */
-.hero {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-  color: white;
-  padding: 6rem 0;
-  text-align: center;
-  border-radius: 0 0 30px 30px;
-  margin-bottom: 4rem;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--secondary);
-  text-align: center;
 }

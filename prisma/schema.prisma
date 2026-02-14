@@ -7,9 +7,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // Uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // Uses a direct connection
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Order {
@@ -20,5 +19,13 @@ model Order {
   service   String
   notes     String?
   status    String   @default("Pending") // Pending, Done, Cancelled
+  createdAt DateTime @default(now())
+}
+
+model ContactQuery {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
   createdAt DateTime @default(now())
 }

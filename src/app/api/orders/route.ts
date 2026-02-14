@@ -67,11 +67,13 @@ export async function POST(request: Request) {
         return NextResponse.json(order, { status: 201 });
     } catch (error) {
         console.error('Order creation error:', error);
-        try {
-            const fs = require('fs');
-            // @ts-ignore
-            fs.appendFileSync('server-error.log', `${new Date().toISOString()} - ${error?.message}\n${error?.stack}\n\n`);
-        } catch (e) { }
+        // Serverless environments compatible logging
+        console.error(JSON.stringify({
+            event: 'ERROR_ORDER_CREATION',
+            timestamp: new Date().toISOString(),
+            error: error instanceof Error ? error.message : 'Unknown error',
+            stack: error instanceof Error ? error.stack : undefined
+        }));
 
         return NextResponse.json(
             { error: 'Failed to place order.' },
