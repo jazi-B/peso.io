@@ -12,16 +12,14 @@ interface RateLimitRecord {
 const rateLimit = new Map<string, RateLimitRecord>();
 
 // Cleanup old records every hour to prevent memory leaks
-if (global.setInterval) {
-    setInterval(() => {
-        const now = Date.now();
-        for (const [ip, record] of rateLimit.entries()) {
-            if (now - record.lastAttempt > 3600000) { // 1 hour
-                rateLimit.delete(ip);
-            }
+setInterval(() => {
+    const now = Date.now();
+    for (const [ip, record] of rateLimit.entries()) {
+        if (now - record.lastAttempt > 3600000) { // 1 hour
+            rateLimit.delete(ip);
         }
-    }, 3600000); // 1 hour
-}
+    }
+}, 3600000); // 1 hour
 
 export async function POST(request: NextRequest) {
     try {
