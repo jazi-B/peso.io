@@ -253,23 +253,28 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: white;
+    background-color: #ffffff;
+    /* Solid white background */
     flex-direction: column;
-    padding: 3rem 2rem;
-    gap: 2rem;
+    padding: 4rem 2rem;
+    gap: 2.5rem;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 999;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
     transform: translateX(0);
+    display: flex;
+    /* Ensure it shows up */
   }
 
   .mobile-menu-btn {
     display: block;
     z-index: 1001;
   }
+
 
   .hamburger.open span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
