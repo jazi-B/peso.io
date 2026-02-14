@@ -83,6 +83,31 @@ export default function AdminDashboard() {
         }
     };
 
+    const deleteOrder = async (id: number) => {
+        if (!confirm('Are you sure you want to delete this order?')) return;
+        try {
+            const res = await fetch(`/api/orders/${id}`, { method: 'DELETE' });
+            if (res.ok) {
+                setOrders(orders.filter(o => o.id !== id));
+            }
+        } catch (error) {
+            console.error('Failed to delete order');
+        }
+    };
+
+    const deleteQuery = async (id: number) => {
+        if (!confirm('Are you sure you want to delete this message?')) return;
+        try {
+            const res = await fetch(`/api/contact/${id}`, { method: 'DELETE' });
+            if (res.ok) {
+                setQueries(queries.filter(q => q.id !== id));
+            }
+        } catch (error) {
+            console.error('Failed to delete query');
+        }
+    };
+
+
     const filteredOrders = orders.filter(order => {
         const matchesSearch =
             order.name.toLowerCase().includes(filter.toLowerCase()) ||
