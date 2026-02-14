@@ -117,7 +117,30 @@ export default function AdminDashboard() {
         return matchesSearch && matchesStatus;
     });
 
+    const resetDatabase = async () => {
+        if (!confirm('CRITICAL: This will DELETE ALL orders and queries and reset the ID counter to 1. Are you sure?')) return;
+        const password = prompt('Please enter the admin password to confirm reset:');
+        if (!password) return;
+
+        try {
+            const res = await fetch('/api/admin/reset', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            });
+            if (res.ok) {
+                alert('Database reset successful! Orders will now start from #1.');
+                setOrders([]);
+                setQueries([]);
+            } else {
+                alert('Failed to reset. Check credentials.');
+            }
+        } catch (error) {
+            console.error('Reset error:', error);
+        }
+    };
+
     const getStatusColor = (status: string) => {
+
         switch (status) {
             case 'Pending': return '#f59e0b'; // Amber
             case 'Done': return '#10b981'; // Emerald
@@ -135,6 +158,14 @@ export default function AdminDashboard() {
                 <div className="flex-center gap-4">
                     <button onClick={() => { fetchOrders(); fetchQueries(); }} className="btn btn-outline" style={{ fontSize: '0.9rem' }}>Refresh</button>
                     <button
+                        onClick={resetDatabase}
+                        className="btn btn-outline"
+                        style={{ fontSize: '0.9rem', borderColor: 'var(--accent)', color: 'var(--accent)' }}
+                        title="Delete everything and start ID from 1"
+                    >
+                        Reset All
+                    </button>
+                    <button
                         onClick={async () => {
                             await fetch('/api/auth/logout', { method: 'POST' });
                             router.push('/admin/login');
@@ -144,6 +175,7 @@ export default function AdminDashboard() {
                     >
                         Logout
                     </button>
+
                 </div>
             </div>
 
