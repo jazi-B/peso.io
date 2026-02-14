@@ -33,3 +33,27 @@ export async function PATCH(
         );
     }
 }
+
+export async function DELETE(
+    request: Request,
+    { params }: { params: Promise<{ id: string }> }
+) {
+    const auth = await isAuthenticated();
+    if (!auth) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    try {
+        const { id } = await params;
+        await prisma.order.delete({
+            where: { id: parseInt(id) },
+        });
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        return NextResponse.json(
+            { error: 'Failed to delete order.' },
+            { status: 500 }
+        );
+    }
+}

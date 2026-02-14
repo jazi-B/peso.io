@@ -1,5 +1,5 @@
 export const siteConfig = {
-    name: "Peso.io",
+    name: "Peso",
     description: "Professional Pest Control & Fumigation Services for your home and business.",
     contact: {
         email: "pesopestsolutions@gmail.com",

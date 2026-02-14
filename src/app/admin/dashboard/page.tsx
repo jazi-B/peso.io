@@ -253,8 +253,17 @@ export default function AdminDashboard() {
                                                             ✕
                                                         </button>
                                                     )}
+                                                    <button
+                                                        onClick={() => deleteOrder(order.id)}
+                                                        className="btn"
+                                                        style={{ background: '#fecaca', color: '#991b1b', padding: '0.25rem 0.75rem', fontSize: '0.86rem' }}
+                                                        title="Delete Order"
+                                                    >
+                                                        🗑️
+                                                    </button>
                                                 </div>
                                             </td>
+
                                         </tr>
                                     ))
                                 )}
@@ -271,6 +280,8 @@ export default function AdminDashboard() {
                                 <th style={{ padding: '1rem', fontWeight: '600' }}>Name</th>
                                 <th style={{ padding: '1rem', fontWeight: '600' }}>Email</th>
                                 <th style={{ padding: '1rem', fontWeight: '600' }}>Message</th>
+                                <th style={{ padding: '1rem', fontWeight: '600' }}>Actions</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -289,6 +300,17 @@ export default function AdminDashboard() {
                                             <a href={`mailto:${query.email}`} style={{ color: 'var(--primary)' }}>{query.email}</a>
                                         </td>
                                         <td style={{ padding: '1rem', maxWidth: '400px' }}>{query.message}</td>
+                                        <td style={{ padding: '1rem' }}>
+                                            <button
+                                                onClick={() => deleteQuery(query.id)}
+                                                className="btn"
+                                                style={{ background: '#fecaca', color: '#991b1b', padding: '0.25rem 0.75rem', fontSize: '0.86rem' }}
+                                                title="Delete Query"
+                                            >
+                                                🗑️
+                                            </button>
+                                        </td>
+
                                     </tr>
                                 ))
                             )}
