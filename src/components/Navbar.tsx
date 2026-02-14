@@ -1,27 +1,37 @@
-import Link from 'next/link';
 import { siteConfig } from '@/config/site';
+import { useState } from 'react';
+
 
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <nav className="glass" style={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 50,
-            borderBottom: '1px solid var(--border)'
-        }}>
-            <div className="container flex-between" style={{ height: '70px' }}>
-                <Link href="/" className="flex-center" style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--primary)', gap: '10px' }}>
-                    <img src="/images/logo.png" alt="Logo" style={{ height: '40px', width: 'auto' }} />
+        <nav className="glass sticky-nav">
+            <div className="container nav-content">
+                <Link href="/" className="nav-logo">
+                    <img src="/images/logo.png" alt="Logo" className="logo-img" />
                     <span>{siteConfig.name}</span>
                 </Link>
-                <div className="flex-center" style={{ gap: '2rem' }}>
-                    <Link href="/" className="nav-link">Home</Link>
-                    <Link href="/about" className="nav-link">About</Link>
-                    <Link href="/services" className="nav-link">Services</Link>
-                    <Link href="/contact" className="nav-link">Contact</Link>
-                    <Link href="/order" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Book Now</Link>
+
+                {/* Mobile Menu Button */}
+                <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
+                    <div className={`hamburger ${isOpen ? 'open' : ''}`}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+
+                {/* Desktop and Mobile Links */}
+                <div className={`nav-links ${isOpen ? 'open' : ''}`}>
+                    <Link href="/" className="nav-link" onClick={() => setIsOpen(false)}>Home</Link>
+                    <Link href="/about" className="nav-link" onClick={() => setIsOpen(false)}>About</Link>
+                    <Link href="/services" className="nav-link" onClick={() => setIsOpen(false)}>Services</Link>
+                    <Link href="/contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</Link>
+                    <Link href="/order" className="btn btn-primary nav-cta" onClick={() => setIsOpen(false)}>Book Now</Link>
                 </div>
             </div>
         </nav>
     );
 };
+
