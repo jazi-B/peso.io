@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         const { password } = await request.json();
 
         // Get IP robustly
-        const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown';
+        const ip = (request as any).ip || request.headers.get('x-forwarded-for') || 'unknown';
         const now = Date.now();
         const windowMs = 60 * 1000; // 1 minute
 
