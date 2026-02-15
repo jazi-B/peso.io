@@ -1,26 +1,30 @@
+
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { verifyToken } from '@/lib/token';
+import { verifyToken } from './lib/auth';
 
-export async function middleware(request: NextRequest) {
-    // Only protect admin routes
-    if (request.nextUrl.pathname.startsWith('/admin/dashboard')) {
-        const token = request.cookies.get('admin_token')?.value;
+// 1. Specify protected routes
+const protectedRoutes = ['/admin/dashboard'];
 
-        if (!token) {
-            return NextResponse.redirect(new URL('/admin/login', request.url));
-        }
+export default async function middleware(req: NextRequest) {
+    // 2. Check if the current route is protected
+    const isProtectedRoute = protectedRoutes.some((route) => req.nextUrl.pathname.startsWith(route));
 
-        const payload = await verifyToken(token);
+    if (isProtectedRoute) {
+        // 3. Decrypt the session from the cookie
+        const token = req.cookies.get('admin_session')?.value;
+        const session = token ? await verifyToken(token) : null;
 
-        if (!payload) {
-            return NextResponse.redirect(new URL('/admin/login', request.url));
+        // 4. Redirect to /admin/login if the user is not authenticated
+        if (!session) {
+            return NextResponse.redirect(new URL('/admin/login', req.nextUrl));
         }
     }
 
     return NextResponse.next();
 }
 
+// 5. Specify routes to match
 export const config = {
-    matcher: '/admin/dashboard/:path*',
+    matcher: ['/admin/dashboard/:path*'],
 };

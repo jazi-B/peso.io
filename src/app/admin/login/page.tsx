@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Input } from '@/components/Input';
 
-export default function AdminLoginPage() {
-    const router = useRouter();
+export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError('');
@@ -22,51 +22,51 @@ export default function AdminLoginPage() {
                 body: JSON.stringify({ password }),
             });
 
-            if (!res.ok) {
-                throw new Error('Invalid password');
-            }
+            const data = await res.json();
 
-            router.push('/admin/dashboard');
-            router.refresh();
-        } catch (err: any) {
-            setError(err.message);
+            if (data.success) {
+                router.push('/admin/dashboard');
+            } else {
+                setError('Incorrect password');
+            }
+        } catch (err) {
+            setError('Login failed');
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div className="container" style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '60vh'
-        }}>
+        <div className="container flex-center" style={{ minHeight: '80vh' }}>
             <div className="glass-card animate-fade-in" style={{ padding: '3rem', width: '100%', maxWidth: '400px' }}>
-                <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center' }}>Admin Login</h1>
+                <h1 className="section-title" style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>Admin Login</h1>
 
-                <form onSubmit={handleSubmit}>
-                    {error && <p className="error-text" style={{ marginBottom: '1rem', textAlign: 'center' }}>{error}</p>}
-
+                <form onSubmit={handleLogin}>
                     <Input
                         label="Password"
+                        name="password"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        required
                         placeholder="Enter admin password"
+                        required
                     />
+
+                    {error && (
+                        <div style={{ color: 'var(--danger)', marginBottom: '1rem', fontSize: '0.9rem', textAlign: 'center' }}>
+                            {error}
+                        </div>
+                    )}
 
                     <button
                         type="submit"
                         className="btn btn-primary"
-                        style={{ width: '100%', marginTop: '1rem' }}
+                        style={{ width: '100%' }}
                         disabled={loading}
                     >
                         {loading ? 'Verifying...' : 'Login'}
                     </button>
                 </form>
-
             </div>
         </div>
     );
