@@ -14,6 +14,7 @@ export default function OrderPage() {
 
     const [formData, setFormData] = useState({
         name: '',
+        email: '',
         contact: '',
         location: '',
         service: '',
@@ -45,7 +46,7 @@ export default function OrderPage() {
 
             setSuccess(true);
             // Reset form usually, or just show success message
-            setFormData({ name: '', contact: '', location: '', service: '', notes: '' });
+            setFormData({ name: '', email: '', contact: '', location: '', service: '', notes: '' });
 
         } catch (err: any) {
             setError(err.message);
@@ -99,6 +100,15 @@ export default function OrderPage() {
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
+                />
+
+                <Input
+                    label="Email Address (Optional)"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    type="email"
                 />
 
                 <Input

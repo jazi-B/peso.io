@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { isAuthenticated } from '@/lib/auth';
 import { SERVICES } from '@/lib/constants';
+import { sendOrderEmail } from '@/lib/resend';
 
 // Create Order (Public)
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, contact, location, service, notes } = body;
+        const { name, email, contact, location, service, notes } = body;
 
         // Validation
         if (!name || !contact || !location || !service) {
@@ -57,12 +58,16 @@ export async function POST(request: Request) {
         const order = await prisma.order.create({
             data: {
                 name,
+                email,
                 contact,
                 location,
                 service,
                 notes,
             },
         });
+
+        // Send email notification (fire and forget)
+        await sendOrderEmail(order);
 
         return NextResponse.json(order, { status: 201 });
     } catch (error) {
