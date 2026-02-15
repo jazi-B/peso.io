@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import { siteConfig } from "@/config/site";
 
 
@@ -37,14 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <ThemeProvider>
-          <Navbar />
-          <main style={{ flex: 1 }}>
-            {children}
-          </main>
-          <Footer />
-          <WhatsAppButton />
-        </ThemeProvider>
+        <Navbar />
+        <main style={{ flex: 1 }}>
+          {children}
+        </main>
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

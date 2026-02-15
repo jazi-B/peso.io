@@ -3,18 +3,12 @@
 import Link from 'next/link';
 
 import { siteConfig } from '@/config/site';
-import { ThemeToggle } from '@/components/ThemeToggle';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     return (
         <nav className="glass sticky-nav">
@@ -25,8 +19,6 @@ export const Navbar = () => {
                 </Link>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    {mounted && <ThemeToggle />}
-
                     {/* Mobile Menu Button */}
                     <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
                         <div className={`hamburger ${isOpen ? 'open' : ''}`}>
