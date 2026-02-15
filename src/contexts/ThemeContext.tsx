@@ -13,10 +13,11 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const [theme, setTheme] = useState<Theme>('light');
-    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
+        // Only run on client side
+        if (typeof window === 'undefined') return;
+
         // Check localStorage for saved theme preference
         const savedTheme = localStorage.getItem('theme') as Theme;
         if (savedTheme) {
@@ -32,15 +33,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }, []);
 
     const toggleTheme = () => {
+        if (typeof window === 'undefined') return;
+
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
         document.documentElement.setAttribute('data-theme', newTheme);
     };
-
-    if (!mounted) {
-        return <>{children}</>;
-    }
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
