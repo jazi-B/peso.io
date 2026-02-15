@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { siteConfig } from "@/config/site";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://peso.io",
+    url: "https://peso.my",
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -38,7 +40,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
+
     </html>
   );
 }
