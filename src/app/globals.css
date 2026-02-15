@@ -251,37 +251,49 @@ a {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
+
+  /* COMPLETE RESET: Remove all transparency/blur from the top bar on mobile */
+  .sticky-nav.glass {
+    background-color: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+  }
+
   .nav-content {
     height: 70px;
+    background-color: #ffffff;
+    /* Extra safety */
   }
 
   .nav-links {
-    position: fixed;
-    top: 0;
-    /* Cover everything from the top */
+    position: absolute;
+    top: 70px;
     left: 0;
     right: 0;
-    bottom: 0;
     background-color: #ffffff !important;
-    /* Completely solid white */
+    /* 100% Solid White */
     flex-direction: column;
-    padding: 6rem 2rem;
-    gap: 2.5rem;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2001;
-    /* Behind logo button but above overall site */
-    display: flex;
-    /* Always flex but hidden by transform */
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1500;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid var(--border);
   }
 
   .nav-links.open {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .mobile-menu-btn {
     display: block;
-    z-index: 1001;
+    z-index: 2005;
   }
 
 
