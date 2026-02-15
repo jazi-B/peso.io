@@ -5,7 +5,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { siteConfig } from "@/config/site";
 
 
@@ -45,9 +44,6 @@ export default function RootLayout({
           </main>
           <Footer />
           <WhatsAppButton />
-          <div style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 2000 }}>
-            <ThemeToggle />
-          </div>
         </ThemeProvider>
       </body>
     </html>
