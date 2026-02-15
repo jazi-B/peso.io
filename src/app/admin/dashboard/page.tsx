@@ -151,10 +151,87 @@ export default function AdminDashboard() {
 
     if (loadingOrders && loadingQueries) return <div className="container" style={{ padding: '4rem' }}>Loading...</div>;
 
+    // Calculate analytics
+    const totalOrders = orders.length;
+    const pendingOrders = orders.filter(o => o.status === 'Pending').length;
+    const completedOrders = orders.filter(o => o.status === 'Done').length;
+
+    // Find most requested service
+    const serviceCounts: Record<string, number> = {};
+    orders.forEach(order => {
+        serviceCounts[order.service] = (serviceCounts[order.service] || 0) + 1;
+    });
+    const mostRequestedService = Object.entries(serviceCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 'N/A';
+
     return (
         <div className="container" style={{ padding: '2rem 0' }}>
+            {/* Analytics Stats */}
+            <div style={{ marginBottom: '3rem' }}>
+                <h1 className="section-title" style={{ fontSize: '2rem', marginBottom: '1.5rem', textAlign: 'left' }}>Admin Dashboard</h1>
+
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: '1.5rem',
+                    marginBottom: '2rem'
+                }}>
+                    {/* Total Orders Card */}
+                    <div className="glass-card" style={{ padding: '1.5rem', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: '600' }}>
+                            Total Orders
+                        </div>
+                        <div style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--primary)' }}>
+                            {totalOrders}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                            All time
+                        </div>
+                    </div>
+
+                    {/* Pending Orders Card */}
+                    <div className="glass-card" style={{ padding: '1.5rem', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: '600' }}>
+                            Pending Orders
+                        </div>
+                        <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#f59e0b' }}>
+                            {pendingOrders}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                            Needs attention
+                        </div>
+                    </div>
+
+                    {/* Completed Orders Card */}
+                    <div className="glass-card" style={{ padding: '1.5rem', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: '600' }}>
+                            Completed
+                        </div>
+                        <div style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--success)' }}>
+                            {completedOrders}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                            Successfully done
+                        </div>
+                    </div>
+
+                    {/* Most Requested Service Card */}
+                    <div className="glass-card" style={{ padding: '1.5rem', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: '600' }}>
+                            Top Service
+                        </div>
+                        <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--secondary)', marginTop: '0.5rem' }}>
+                            {mostRequestedService}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                            Most requested
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Action Buttons */}
             <div className="flex-between" style={{ marginBottom: '2rem' }}>
-                <h1 className="section-title" style={{ fontSize: '2rem', marginBottom: 0, textAlign: 'left' }}>Admin Dashboard</h1>
+                <div></div>
                 <div className="flex-center gap-4">
                     <button onClick={() => { fetchOrders(); fetchQueries(); }} className="btn btn-outline" style={{ fontSize: '0.9rem' }}>Refresh</button>
                     <button
