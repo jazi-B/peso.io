@@ -8,6 +8,7 @@ const JWT_SECRET = new TextEncoder().encode(
 );
 
 export async function signToken() {
+    // Session lasts 24 hours
     return new SignJWT({ admin: true })
         .setProtectedHeader({ alg: 'HS256' })
         .setIssuedAt()
