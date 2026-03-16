@@ -101,7 +101,7 @@ export async function GET() {
         return NextResponse.json(orders);
     } catch (error) {
         return NextResponse.json(
-            { error: 'Failed to fetch orders.' },
+            { error: 'Failed to fetch orders.', details: String((error as any).message || error) },
             { status: 500 }
         );
     }

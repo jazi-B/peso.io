@@ -47,9 +47,15 @@ export default function AdminDashboard() {
             const res = await fetch('/api/orders');
             if (res.status === 401) return router.push('/admin/login');
             const data = await res.json();
-            setOrders(data);
+            if (Array.isArray(data)) {
+                setOrders(data);
+            } else {
+                console.error('API Error:', data.error || data);
+                setOrders([]);
+            }
         } catch (error) {
             console.error('Failed to fetch orders');
+            setOrders([]);
         } finally {
             setLoadingOrders(false);
         }
@@ -60,9 +66,15 @@ export default function AdminDashboard() {
             const res = await fetch('/api/contact');
             if (res.status === 401) return; // Handled by orders fetch usually
             const data = await res.json();
-            setQueries(data);
+            if (Array.isArray(data)) {
+                setQueries(data);
+            } else {
+                console.error('API Error:', data.error || data);
+                setQueries([]);
+            }
         } catch (error) {
             console.error('Failed to fetch queries');
+            setQueries([]);
         } finally {
             setLoadingQueries(false);
         }

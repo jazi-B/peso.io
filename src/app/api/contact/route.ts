@@ -48,7 +48,7 @@ export async function GET() {
         return NextResponse.json(queries);
     } catch (error) {
         return NextResponse.json(
-            { error: 'Failed to fetch queries.' },
+            { error: 'Failed to fetch queries.', details: String((error as any).message || error) },
             { status: 500 }
         );
     }
